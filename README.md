@@ -4,7 +4,7 @@ Node.js bindings to GLFW3
 
 ### Installation
 
-Please ensure you have all the required build tools for your OS then you can install with
+Please ensure you have CMake as well as a full C++ toolchain for your OS then you can install with
 
 ```
 npm install @minecraftts/glfw

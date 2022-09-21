@@ -1,3 +1,5 @@
+#define GLFW_INCLUDE_NONE
+
 #include <napi.h>
 #include <iostream>
 #include <GLFW/glfw3.h>
@@ -1370,7 +1372,7 @@ void __glfwSetWindowPosCallback(const Napi::CallbackInfo &info) {
         Napi::Env env = windowPosCallback->Env();
         Napi::HandleScope scope(env);
 
-        Napi::External windowObject = Napi::External<GLFWwindow>::New(env, window);
+        Napi::External<GLFWwindow> windowObject = Napi::External<GLFWwindow>::New(env, window);
 
         windowPosCallback->Call({ windowObject, Napi::Number::New(env, xpos), Napi::Number::New(env, ypos) });
     });
@@ -1400,7 +1402,7 @@ void __glfwSetWindowSizeCallback(const Napi::CallbackInfo &info) {
         Napi::Env env = windowSizeCallback->Env();
         Napi::HandleScope scope(env);
 
-        Napi::External windowObject = Napi::External<GLFWwindow>::New(env, window);
+        Napi::External<GLFWwindow> windowObject = Napi::External<GLFWwindow>::New(env, window);
 
         windowSizeCallback->Call({ windowObject, Napi::Number::New(env, width), Napi::Number::New(env, height) });
     });
@@ -1430,7 +1432,7 @@ void __glfwSetWindowCloseCallback(const Napi::CallbackInfo &info) {
         Napi::Env env = windowCloseCallback->Env();
         Napi::HandleScope scope(env);
 
-        Napi::External windowObject = Napi::External<GLFWwindow>::New(env, window);
+        Napi::External<GLFWwindow> windowObject = Napi::External<GLFWwindow>::New(env, window);
 
         windowCloseCallback->Call({ windowObject });
     });
@@ -1460,7 +1462,7 @@ void __glfwSetWindowRefreshCallback(const Napi::CallbackInfo &info) {
         Napi::Env env = windowRefreshCallback->Env();
         Napi::HandleScope scope(env);
 
-        Napi::External windowObject = Napi::External<GLFWwindow>::New(env, window);
+        Napi::External<GLFWwindow> windowObject = Napi::External<GLFWwindow>::New(env, window);
 
         windowRefreshCallback->Call({ windowObject });
     });
@@ -1490,7 +1492,7 @@ void __glfwSetWindowFocusCallback(const Napi::CallbackInfo &info) {
         Napi::Env env = windowFocusCallback->Env();
         Napi::HandleScope scope(env);
 
-        Napi::External windowObject = Napi::External<GLFWwindow>::New(env, window);
+        Napi::External<GLFWwindow> windowObject = Napi::External<GLFWwindow>::New(env, window);
 
         windowFocusCallback->Call({ windowObject, Napi::Boolean::New(env, focused) });
     });
@@ -1520,7 +1522,7 @@ void __glfwSetWindowIconifyCallback(const Napi::CallbackInfo &info) {
         Napi::Env env = windowIconifyCallback->Env();
         Napi::HandleScope scope(env);
 
-        Napi::External windowObject = Napi::External<GLFWwindow>::New(env, window);
+        Napi::External<GLFWwindow> windowObject = Napi::External<GLFWwindow>::New(env, window);
 
         windowIconifyCallback->Call({ windowObject, Napi::Boolean::New(env, iconified) });
     });
@@ -1550,7 +1552,7 @@ void __glfwSetWindowMaximizeCallback(const Napi::CallbackInfo &info) {
         Napi::Env env = windowMaximizeCallback->Env();
         Napi::HandleScope scope(env);
 
-        Napi::External windowObject = Napi::External<GLFWwindow>::New(env, window);
+        Napi::External<GLFWwindow> windowObject = Napi::External<GLFWwindow>::New(env, window);
 
         windowMaximizeCallback->Call({ windowObject, Napi::Boolean::New(env, maximized) });
     });
@@ -1613,7 +1615,7 @@ void __glfwSetWindowContentScaleCallback(const Napi::CallbackInfo &info) {
         Napi::Env env = windowContentScaleCallback->Env();
         Napi::HandleScope scope(env);
 
-        Napi::External windowObject = Napi::External<GLFWwindow>::New(env, window);
+        Napi::External<GLFWwindow> windowObject = Napi::External<GLFWwindow>::New(env, window);
 
         windowContentScaleCallback->Call({ windowObject, Napi::Number::New(env, xscale), Napi::Number::New(env, yscale) });
     });

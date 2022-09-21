@@ -1,4 +1,4 @@
-const bindings = require("bindings")("glfw.node");
+const bindings = require("bindings")("glfw_binding.node");
 
 module.exports.GLFW_VERSION_MAJOR = 3;
 module.exports.GLFW_VERSION_MINOR = 3;
