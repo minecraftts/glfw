@@ -381,7 +381,8 @@ export type GLFWvidmode = {
     height: number,
     redBits: number,
     greenBits: number,
-    blueBits: number
+    blueBits: number,
+    refreshRate: number
 };
 export type GLFWgammaramp = {
     red: number[],
