@@ -18,5 +18,5 @@ jobs:
       - run: npm i
       - uses: actions/upload-artifact@v3
         with:
-          name: ${{ matrix.platform.name }}
+          name: ${{ matrix.os }}
           path: ./build/**/*.node
