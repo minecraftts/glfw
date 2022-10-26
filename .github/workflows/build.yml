@@ -9,6 +9,9 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     steps:
+      - run: sudo apt install -y libxrandr-dev libxinerama-dev libxcursor-dev libxi-dev
+        if: matrix.os == 'ubuntu-latest'
+
       - uses: actions/checkout@v3
         with:
           submodules: recursive
@@ -16,4 +19,4 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.platform.name }}
-          path: build/Release/glfw_binding.node
+          path: ./build/**/*.node
