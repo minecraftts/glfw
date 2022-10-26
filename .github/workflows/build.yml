@@ -1,0 +1,17 @@
+name: build
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+      - run: npm i
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ${{ matrix.platform.name }}
+          path: build/Release/glfw_binding.node
